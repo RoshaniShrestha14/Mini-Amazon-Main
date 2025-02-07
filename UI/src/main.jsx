@@ -8,32 +8,28 @@ import Login from './Login.jsx'
 import Register from './Register.jsx'
 import AddProduct from './AddProduct.jsx'
 import EditProduct from './EditProduct.jsx'
+import ProductDetail from './ProductDetail.jsx'
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         {/* protected routes logged in user route  */}
         <Route>
-          <Route
-          path = "/" element = {<Home />}> 
-          </Route>
-          <Route
-          path = "/add-product" element = {<AddProduct />}> 
-          </Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/add-product" element={<AddProduct />}></Route>
 
-          <Route
-          path = "/edit-product" element = {<EditProduct />}> 
-          </Route>
+          <Route path="/edit-product" element={<EditProduct />}></Route>
+
+          <Route path="/product-detail/:id" element={<ProductDetail />}></Route>
         </Route>
 
-
-      {/* public route  */}
-      <Route>
-        <Route path = "/login" element = {<Login />}></Route>
-        <Route path = "/register" element = {<Register />}></Route>
-      </Route>
+        {/* public route  */}
+        <Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>
-)
+);
